@@ -2,26 +2,37 @@
 #include <string>
 using namespace std;
 
-int intA;
-int intB;
-int intC;
+int choosingTriangle;
+int solvingFor;
 
-int rightTriangle() {
-	cout << "What are you solving for?" << endl;
-	cout << "1 - Perimeter\n2 - Missing Side\n3 - Area\n4 - Leave" << endl;
 
+int perimeterCalculate(int perimeterFirst, int perimeterSecond, int perimeterThird) {
+	cout << perimeterFirst << " + " << perimeterSecond << " + " << perimeterThird << " = " <<
+		perimeterFirst + perimeterSecond + perimeterThird << endl;
+	return 0;
 }
 
-int isoceles() {
-	cout << "What are you solving for?" << endl;
-	cout << "1 - Perimeter\n2 - Missing Side\n3 - Area\n4 - Leave" << endl;
-
+int areaCalculate(int height, int base) 
+{
+	cout << height << " * " << base << " / 2 = " << height * base / 2 << endl;
+	return 0;
 }
 
-int equilateral() {
-	cout << "What are you solving for?" << endl;
-	cout << "1 - Perimeter\n2 - Missing Side\n3 - Area\n4 - Leave" << endl;
+
+int perimeter() {
+	cout << "What is the number of your first side? : " << endl;
+	cin >> perimeterFirst;
+
+
+	return 0;
 }
+
+
+int area() {
+	cout << "What is the height and base of the triangle? : " << endl;
+	cin >> areaCalculate();
+}
+
 
 int rightTriSide() {
 
@@ -35,13 +46,64 @@ int equilateralTriSide() {
 
 }
 
+int rightTriangle() {
+	cout << "What are you solving for?" << endl;
+	cout << "1 - Perimeter\n2 - Missing Side\n3 - Area\n4 - Leave" << endl;
+	cin >> solvingFor;
 
+	if (solvingFor == 1) {
+		cout << perimeter();
 
+	}
+	if (solvingFor == 2) {
+		cout << rightTriSide();
+	}
+	if (solvingFor == 3) {
+		cout << area();
+
+	}
+}
+
+int isoceles() {
+	cout << "What are you solving for?" << endl;
+	cout << "1 - Perimeter\n2 - Missing Side\n3 - Area\n4 - Leave" << endl;
+	cin >> solvingFor;
+
+	if (solvingFor == 1) {
+		cout << perimeter();
+
+	}
+	if (solvingFor == 2) {
+		cout << isocelesTriSide();
+	}
+	if (solvingFor == 3) {
+		cout << area();
+
+	}
+
+}
+
+int equilateral() {
+	cout << "What are you solving for?" << endl;
+	cout << "1 - Perimeter\n2 - Missing Side\n3 - Area\n4 - Leave" << endl;
+	cin >> solvingFor;
+
+	if (solvingFor == 1) {
+		cout << perimeter();
+
+	}
+	if (solvingFor == 2) {
+		cout << equilateralTriSide();
+	}
+	if (solvingFor == 3) {
+		cout << area();
+
+	}
+}
 
 
 int main()
 {
-	int choosingTriangle;
 
 	cout << "Welcome to the triangle calculator. " << endl;
 	cout << "What type of triangle are you solving for? " << endl;
@@ -60,9 +122,8 @@ int main()
 		equilateral();
 	}
 	else
-		cout << 
+		cout << "Please pick a number that actually does something. " << endl;
 
-		cout << "What are you solving for?" << endl;
-	cout << "1 - Perimeter\n2 - Missing Side\n3 - Area\n4 - Leave" << endl;
-
+		system("pause");
+		return 0;
 }

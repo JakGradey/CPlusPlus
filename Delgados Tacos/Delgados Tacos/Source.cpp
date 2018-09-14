@@ -28,20 +28,20 @@ int tacoTruck() {
 } 
 
 int menu() {
-	cout << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
-	cout << "X                                                        X";
-	cout << "X                   Delgados Tacos                       X";
-	cout << "X                                                        X";
-	cout << "X          Taco                   $1.25                  X";
-	cout << "X          Burrito                $1.75                  X";
-	cout << "X          Taco Salad             $2.00                  X";
-	cout << "X          Enchilada              $2.75                  X";
-	cout << "X          Quesadilla             $2.50                  X";
-	cout << "X          Jamaican Taco          $4.00                  X";
-	cout << "X                                                        X";
-	cout << "X                                                        X";
-	cout << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
-
+	cout << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" << endl;
+	cout << "X                                                        X" << endl;
+	cout << "X                   Delgados Tacos                       X" << endl;
+	cout << "X                                                        X" << endl;
+	cout << "X          Taco                   $1.25                  X" << endl;
+	cout << "X          Burrito                $1.75                  X" << endl;
+	cout << "X          Taco Salad             $2.00                  X" << endl;
+	cout << "X          Enchilada              $2.75                  X" << endl;
+	cout << "X          Quesadilla             $2.50                  X" << endl;
+	cout << "X          Jamaican Taco          $4.00                  X" << endl;
+	cout << "X                                                        X" << endl;
+	cout << "X                                                        X" << endl;
+	cout << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" << endl;
+	cout << "";
 	return 0;
 }
 
@@ -126,6 +126,8 @@ int main()
 	jamaicanTacoTotTaxed = jamaicanTacoTot * taxRate;
 
 	total = tacosTot + burritosTot + tacoSaladTot + enchiladasTot + quesadillaTot + jamaicanTacoTot;
+
+
 
 	totalTaxed = tacosTotTaxed + burritosTotTaxed + tacoSaladTotTaxed + enchiladasTotTaxed + quesadillaTotTaxed + jamaicanTacoTotTaxed;
 
