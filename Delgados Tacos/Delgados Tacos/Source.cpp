@@ -84,7 +84,8 @@ int main()
 
 	menu();
 
-	cout << "Welcome to Delgados Tacos what would you like to order from our menu above? >>";
+	cout << "Welcome to Delgados Tacos what would you like to order from our menu above? " << endl;
+	cout << "1 - Taco\n2 - Burrito\n3 - Taco Salad\n4 - Quesadilla\n5 - Enchilada\n6 - Jamaican Taco" << endl;
 	cin >> choice;
 	if (choice == 1) {
 		cout << "How many tacos do you want? :";
@@ -118,18 +119,18 @@ int main()
 	quesadillaTot = quesadilla * quesadillaNum;
 	jamaicanTacoTot = jamaicanTaco * jamaicanTacoNum;
 
-	tacosTotTaxed = tacosTot * taxRate;
-	burritosTotTaxed = burritosTot * taxRate;
-	tacoSaladTotTaxed = tacoSaladTot * taxRate;
-	enchiladasTotTaxed = enchiladasTot * taxRate;
-	quesadillaTotTaxed = quesadillaTot * taxRate;
-	jamaicanTacoTotTaxed = jamaicanTacoTot * taxRate;
+	tacosTotTaxed = tacosTot * taxRate + tacosTot;
+	burritosTotTaxed = burritosTot * taxRate + burritosTot;
+	tacoSaladTotTaxed = tacoSaladTot * taxRate + tacoSaladTot;
+	enchiladasTotTaxed = enchiladasTot * taxRate + enchiladasTot;
+	quesadillaTotTaxed = quesadillaTot * taxRate + quesadillaTot;
+	jamaicanTacoTotTaxed = jamaicanTacoTot * taxRate + jamaicanTacoTot;
 
 	total = tacosTot + burritosTot + tacoSaladTot + enchiladasTot + quesadillaTot + jamaicanTacoTot;
 
-
-
 	totalTaxed = tacosTotTaxed + burritosTotTaxed + tacoSaladTotTaxed + enchiladasTotTaxed + quesadillaTotTaxed + jamaicanTacoTotTaxed;
+
+	cout << "Your total is $" << total << " and $" << totalTaxed << " with taxes.";
 
 	system("pause");
 	return 0;
