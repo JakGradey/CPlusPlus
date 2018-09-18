@@ -51,14 +51,12 @@ int main()
 	cout << "Did you go to college ? Yes or No >>>";
 	cin >> collegeYN;
 
-	if (collegeYN == "Yes") {
+	if (collegeYN == "Yes" || collegeYN == "yes") {
 		cout << yes;
 	}
-	if (collegeYN == "No") {
+	if (collegeYN == "No" || collegeYN == "no") {
 		cout << no;
 	}
-
-
 
 	system("pause");
 	return 0;
