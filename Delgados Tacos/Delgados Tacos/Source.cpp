@@ -80,38 +80,40 @@ int main()
 	double total;
 	double totalTaxed;
 	int choice;
-	tacoTruck();
+	
+	int stillHungry = 0;
 
-	menu();
+	do {
+		tacoTruck();
+		menu();
 
-	cout << "Welcome to Delgados Tacos what would you like to order from our menu above? " << endl;
-	cout << "1 - Taco\n2 - Burrito\n3 - Taco Salad\n4 - Quesadilla\n5 - Enchilada\n6 - Jamaican Taco" << endl;
-	cin >> choice;
-	if (choice == 1) {
-		cout << "How many tacos do you want? :";
-		cin >> tacosNum;
-	}
-	else if (choice == 2) {
-		cout << "How many burritos do you want? :";
-		cin >> burritosNum;
-	}
-	else if (choice == 3) {
-		cout << "How many taco salads do you want? :";
-		cin >> tacoSaladNum;
-	}
-	else if (choice == 4) {
-		cout << "How many quesadillas do you want? :";
-		cin >> quesadillaNum;
-	}
-	else if (choice == 5) {
-		cout << "How many enchiladas do you want? :";
-		cin >> enchiladasNum;
-	}
-	else if (choice == 6) {
-		cout << "How many jamaican tacos do you want? :";
-		cin >> jamaicanTacoNum;
-	}
-
+		cout << "Welcome to Delgados Tacos what would you like to order from our menu above? " << endl;
+		cout << "1 - Taco\n2 - Burrito\n3 - Taco Salad\n4 - Quesadilla\n5 - Enchilada\n6 - Jamaican Taco" << endl;
+		cin >> choice;
+		if (choice == 1) {
+			cout << "How many tacos do you want? :";
+			cin >> tacosNum;
+		}
+		else if (choice == 2) {
+			cout << "How many burritos do you want? :";
+			cin >> burritosNum;
+		}
+		else if (choice == 3) {
+			cout << "How many taco salads do you want? :";
+			cin >> tacoSaladNum;
+		}
+		else if (choice == 4) {
+			cout << "How many quesadillas do you want? :";
+			cin >> quesadillaNum;
+		}
+		else if (choice == 5) {
+			cout << "How many enchiladas do you want? :";
+			cin >> enchiladasNum;
+		}
+		else if (choice == 6) {
+			cout << "How many jamaican tacos do you want? :";
+			cin >> jamaicanTacoNum;
+		}
 	tacosTot = tacos * tacosNum;
 	burritosTot = burritos * burritosNum;
 	tacoSaladTot = tacoSalad * tacoSaladNum;
@@ -130,7 +132,11 @@ int main()
 
 	totalTaxed = tacosTotTaxed + burritosTotTaxed + tacoSaladTotTaxed + enchiladasTotTaxed + quesadillaTotTaxed + jamaicanTacoTotTaxed;
 
-	cout << "Your total is $" << total << " and $" << totalTaxed << " with taxes.";
+	cout << "Your total is $" << total << " and $" << totalTaxed << " with taxes." << endl;
+
+	cout << "Would you like some more? : " << end;
+	cin >> stillHungry;
+	} while (stillHungry != 2);
 
 	system("pause");
 	return 0;
