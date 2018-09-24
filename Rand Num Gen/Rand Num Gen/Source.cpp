@@ -18,20 +18,19 @@ int randomGame() {
 		cout << "Pick a random number from 1-100: ";
 		cin >> numChoice;
 
-		if (numChoice > secret) 
-		{
+			if (numChoice > secret) 
+			{
 			cout << "The number you have chose is too high!, guess again stupid! " << endl;
 			count = count + 1;
-		}
-		else if (numChoice < secret)
-		{
+			}
+			else if (numChoice < secret)
+			{
 			cout << "The number you have chose is too low!, guess again stupid! " << endl;
-		}
-		else 
+			}
+			else 
 
-	} while (numChoice != secret);
+		} while (numChoice != secret);
 
-	system("pause");
 	return 0;
 }
 
@@ -39,9 +38,9 @@ int randomGame() {
 
 int main() {
 
+	randomGame();
 
-
-
-
+	system("pause");
+	return 0;
 
 }
