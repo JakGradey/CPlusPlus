@@ -9,9 +9,9 @@ using namespace std;
 int easyRandomGame() {
 	int numChoice;
 	int secret;
-	int count = 1;
+	int count = 0;
 
-	srand(time(NULL));
+	srand((unsigned int)time(NULL));
 	secret = rand() % 10 + 1;
 
 	do {
@@ -30,29 +30,29 @@ int easyRandomGame() {
 		}
 		else
 			cout << "You Win! " << endl;
-
-		return 0;
 	} while (numChoice != secret);
+
+	return 0;
 }
 
 int mediumRandomGame() {
-	int numChoice;
-	int secret;
-	int count = 1;
+	int numChoiceTwo;
+	int secretTwo;
+	int countTwo = 0;
 
-	srand(time(NULL));
-	secret = rand() % 100 + 1;
+	srand((unsigned int)time(NULL));
+	secretTwo = rand() % 100 + 1;
 
 	do {
 		cout << "Pick a random number from 1-100: ";
-		cin >> numChoice;
+		cin >> numChoiceTwo;
 
-		if (numChoice > secret)
+		if (numChoiceTwo > secretTwo)
 		{
 			cout << "The number you have chose is too high!, guess again stupid! " << endl;
-			count = count + 1;
+			countTwo = countTwo + 1;
 		}
-		else if (numChoice < secret)
+		else if (numChoiceTwo < secretTwo)
 		{
 			cout << "The number you have chose is too low!, guess again stupid! " << endl;
 		}
@@ -60,27 +60,27 @@ int mediumRandomGame() {
 			cout << "You Win! " << endl;
 
 		return 0;
-	} while (numChoice != secret);
+	} while (numChoiceTwo != secretTwo);
 }
 
 int hardRandomGame() {
-	int numChoice;
-	int secret;
-	int count = 1;
+	int numChoiceThree;
+	int secretThree;
+	int countThree = 0;
 
-	srand(time(NULL));
-	secret = rand() % 1000 + 1;
+	srand((unsigned int)time(NULL));
+	secretThree = rand() % 1000 + 1;
 
 	do {
 		cout << "Pick a random number from 1-100: ";
-		cin >> numChoice;
+		cin >> numChoiceThree;
 
-		if (numChoice > secret)
+		if (numChoiceThree > secretThree)
 		{
 			cout << "The number you have chose is too high!, guess again stupid! " << endl;
-			count = count + 1;
+			countThree = countThree + 1;
 		}
-		else if (numChoice < secret)
+		else if (numChoiceThree < secretThree)
 		{
 			cout << "The number you have chose is too low!, guess again stupid! " << endl;
 		}
@@ -88,27 +88,30 @@ int hardRandomGame() {
 			cout << "You Win! " << endl;
 
 		return 0;
-	} while (numChoice != secret);
+	} while (numChoiceThree != secretThree);
 }
 
 
 int main() {
 	int gameChoice;
 
-	cout << "Welcome to my random number Generator game, choose 1 - Easy\n2 - Medium\n3 - Hard" << endl;
-	cin >> gameChoice;
+	do {
+		cout << "Welcome to my random number Generator game, choose 1 - Easy\n2 - Medium\n3 - Hard\n4 - Quit" << endl;
+		cin >> gameChoice;
+
 		if (gameChoice == 1)
 		{
-			easyRandomGame;
+			easyRandomGame();
 		}
-		else (gameChoice == 2)
+		else if (gameChoice == 2)
 		{
-			mediumRandomGame;
+			mediumRandomGame();
 		}
-		else (gameChoice == 3)
+		else if (gameChoice == 3)
 		{
-		hardRandomGame;
+			hardRandomGame();
 		}
+	} while (gameChoice != 4);
 
 	system("pause");
 	return 0;

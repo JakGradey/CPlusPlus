@@ -39,7 +39,7 @@ int randomGameHard() {
 
 		if (numChoiceTwo == secretTwo) 
 		{
-			cout << "You Won!";
+			cout << "You Win!";
 		}
 		else
 			cout << "Guess again ";
@@ -66,12 +66,11 @@ int randomGame() {
 			cout << "Guess again ";
 	} while (numChoice != secret);
 
-
 	return 0;
 }
 
 int main() {
-	int pickGame = 4;
+	int pickGame;
 
 	do {
 	cout << "Welcome to my fabulous Game\nGame 1, Game 2, or Game 3\nTo quit press 4." << endl;
