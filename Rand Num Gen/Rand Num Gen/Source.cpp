@@ -59,8 +59,8 @@ int mediumRandomGame() {
 		else
 			cout << "You Win! " << endl;
 
-		return 0;
 	} while (numChoiceTwo != secretTwo);
+	return 0;
 }
 
 int hardRandomGame() {
@@ -72,7 +72,7 @@ int hardRandomGame() {
 	secretThree = rand() % 1000 + 1;
 
 	do {
-		cout << "Pick a random number from 1-100: ";
+		cout << "Pick a random number from 1-1000: ";
 		cin >> numChoiceThree;
 
 		if (numChoiceThree > secretThree)
@@ -87,8 +87,9 @@ int hardRandomGame() {
 		else
 			cout << "You Win! " << endl;
 
-		return 0;
 	} while (numChoiceThree != secretThree);
+	return 0;
+
 }
 
 
