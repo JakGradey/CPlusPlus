@@ -93,11 +93,39 @@ int hardRandomGame() {
 }
 
 
+int computerRandomGame() {
+	int numChoiceTwo;
+	int secretTwo;
+	int computerCount = 0;
+
+	do {
+		srand((unsigned int)time(NULL));
+		secretTwo = rand() % 100 + 1;
+		cout << "Pick a random number from 1-100: ";
+		numChoiceTwo = rand() % 100 + 1;
+
+		if (numChoiceTwo > secretTwo)
+		{
+			cout << "The number you have chose is too high!, guess again stupid! " << endl;
+			computerCount = computerCount + 1;
+		}
+		else if (numChoiceTwo < secretTwo)
+		{
+			cout << "The number you have chose is too low!, guess again stupid! " << endl;
+		}
+		else
+			cout << "You Win! It took you " << computerCount << " tries to guess the right number." << endl;
+
+	} while (numChoiceTwo != secretTwo);
+	return 0;
+}
+
+
 int main() {
 	int gameChoice;
 
 	do {
-		cout << "Welcome to my random number Generator game, choose \n1 - Easy\n2 - Medium\n3 - Hard\n4 - Quit" << endl;
+		cout << "Welcome to my random number Generator game, choose \n1 - Easy\n2 - Medium\n3 - Hard\n4 - Watch Computer Try\n5 - Quit" << endl;
 		cin >> gameChoice;
 
 		if (gameChoice == 1)
@@ -112,42 +140,12 @@ int main() {
 		{
 			hardRandomGame();
 		}
-	} while (gameChoice != 4);
+		else if (gameChoice == 4)
+		{
+			computerRandomGame();
+		}
+	} while (gameChoice != 5);
 
 	system("pause");
 	return 0;
 }
-
-int mediumRandomGame() {
-	int numChoiceTwo;
-	int secretTwo;
-	int countTwo = 0;
-
-	srand((unsigned int)time(NULL));
-	secretTwo = rand() % 100 + 1;
-
-	do {
-		cout << "Pick a random number from 1-100: ";
-		cin >> numChoiceTwo;
-		numChoiceTwo = rand() % 100 + 1;
-
-		if (numChoiceTwo > secretTwo)
-		{
-			cout << "The number you have chose is too high!, guess again stupid! " << endl;
-			countTwo = countTwo + 1;
-		}
-		else if (numChoiceTwo < secretTwo)
-		{
-			cout << "The number you have chose is too low!, guess again stupid! " << endl;
-		}
-		else
-			cout << "You Win! " << endl;
-
-	} while (numChoiceTwo != secretTwo);
-	return 0;
-}
-
-
-
-
-
